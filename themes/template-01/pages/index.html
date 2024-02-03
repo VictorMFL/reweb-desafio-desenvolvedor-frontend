@@ -67,14 +67,18 @@
     <!-- link do css compilado -->
     <link rel="stylesheet" href="../assets/css/output.css" />
 
-    <!-- script que pega os dados do index.json -->
-    <script>
-      fetch("../source/output/index.json")
-        .then(response => response.json())
-        .then(data => {
-          document.title = data.texts.title;
-        });
-    </script>
+    <!-- amp-form -->
+    <script
+      async
+      custom-element="amp-form"
+      src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
+    ></script>
+
+    <script
+      async
+      custom-template="amp-mustache"
+      src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+    ></script>
   </head>
   <body>
     <header class="header">
@@ -82,5 +86,45 @@
         <p class="header_text">150 x 75</p>
       </div>
     </header>
+
+    <main class="main">
+      <section class="banner">
+        <h1 class="banner_title">banner 01</h1>
+
+        <form
+          class="form"
+          method="post"
+          action-xhr="https://formspree.io/f/myyrewjk"
+          target="_top"
+        >
+          <h1 class="title">Solicite cotação</h1>
+
+          <input type="text" name="name" id="name" required />
+          <input type="email" name="email" id="email" required />
+          <input type="text" name="cpf" id="cpf" required />
+          <input type="text" name="telefone" id="telefone" required />
+          <textarea
+            name="mensagem"
+            id="imensagem"
+            cols="10"
+            rows="3"
+          ></textarea>
+
+          <div class="politica-privacidade">
+            <input type="checkbox" name="politica-privacidade" />
+            <label for="politica-privacidade" id="privacidade"></label>
+          </div>
+          <input type="submit" id="button-submit" />
+          <div submit-success>
+            <template type="amp-mustache" id="sent-success"> </template>
+          </div>
+          <div submit-error>
+            <template type="amp-mustache" id="error-post"> </template>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="../src/index.js"></script>
   </body>
 </html>
