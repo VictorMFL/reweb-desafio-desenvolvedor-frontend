@@ -1,16 +1,7 @@
-
-  <!--include do json-->
-{% set output = source('source/output/index.json') | json_decode %}
-  <!--variáveis-->
-{% set texts = output.texts %}
-{% set assets = output.assets %}
-{% set highlights = output.highlights %}
-{% set form = output.form %}
-
 <!DOCTYPE html>
-<html amp>
+<html amp lang="pt-br">
   <head>
-    <title>{{ texts.title }}</title>
+    <title>Desafio</title>
     <meta charset="utf-8" />
     <link rel="canonical" href="index.html" />
     <meta name="viewport" content="width=device-width" />
@@ -72,17 +63,24 @@
         }
       </style></noscript
     >
-    <style amp-custom>{% include 'assets/css/main.css' %}</style>    
     <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!-- link do css compilado -->
+    <link rel="stylesheet" href="../assets/css/output.css" />
+
+    <!-- script que pega os dados do index.json -->
+    <script>
+      fetch("../source/output/index.json")
+        .then(response => response.json())
+        .then(data => {
+          document.title = data.texts.title;
+        });
+    </script>
   </head>
   <body>
-    <div class="block">
-      <span class="block__img">
-        <amp-img src="{{ assets.meme }}" width="476" height="313" layout="responsive" alt="Challenge Acepted!"></amp-img>
-      </span>
-      <h1 class="block__title">
-        {{ texts.welcome }}
-      </h1>
-    </div>
+    <header class="header">
+      <div class="header_content">
+        <p class="header_text">150 x 75</p>
+      </div>
+    </header>
   </body>
 </html>
