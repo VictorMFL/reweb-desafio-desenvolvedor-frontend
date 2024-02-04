@@ -79,6 +79,20 @@
       custom-template="amp-mustache"
       src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
     ></script>
+
+    <!-- amp-carousel -->
+    <script
+      async
+      custom-element="amp-carousel"
+      src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"
+    ></script>
+
+    <!-- amp-youtube -->
+    <script
+      async
+      custom-element="amp-youtube"
+      src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+    ></script>
   </head>
   <body>
     <header class="header">
@@ -122,6 +136,75 @@
             <template type="amp-mustache" id="error-post"> </template>
           </div>
         </form>
+      </section>
+
+      <section class="cards_container">
+        <amp-carousel
+          height="300"
+          layout="fixed-height"
+          type="slides"
+          role="region"
+          aria-label="Basic usage carousel"
+        >
+          <div class="grid_cards">
+            <div class="card card-1">
+              <div class="card_content">
+                <h2 class="card_title"></h2>
+                <p class="card_description"></p>
+              </div>
+            </div>
+
+            <div class="card card-2">
+              <div class="card_content">
+                <h2 class="card_title"></h2>
+                <p class="card_description"></p>
+              </div>
+            </div>
+
+            <div class="card card-3">
+              <div class="card_content">
+                <h2 class="card_title"></h2>
+                <p class="card_description"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid_cards">
+            <div class="card card-4">
+              <div class="card_content">
+                <h2 class="card_title"></h2>
+                <p class="card_description"></p>
+              </div>
+            </div>
+
+            <div class="card card-5">
+              <div class="card_content">
+                <h2 class="card_title"></h2>
+                <p class="card_description"></p>
+              </div>
+            </div>
+
+            <div class="card card-6">
+              <div class="card_content">
+                <h2 class="card_title"></h2>
+                <p class="card_description"></p>
+              </div>
+            </div>
+          </di>
+        </amp-carousel>
+      </section>
+
+      <section class="youtube">
+        <amp-youtube
+          width="50"
+          height="50"
+          layout="responsive"
+          data-param-modestbranding="1"
+          data-param-rel="1"
+          data-videoid="lBTCB7yLs8Y"
+          id="video"
+        >
+        </amp-youtube>
       </section>
     </main>
 

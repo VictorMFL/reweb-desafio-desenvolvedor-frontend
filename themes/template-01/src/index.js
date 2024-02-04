@@ -40,4 +40,19 @@ get().then(() => {
 
   sentSucces.innerHTML = data.form.banner_01.settings.message_success;
   errorPost.innerHTML = data.form.banner_01.settings.message_error;
+
+  // cards
+  const urlImage = data.highlights[0].image_home;
+  const backgroundCards = document.querySelectorAll(".card");
+  backgroundCards.forEach(card => {
+    card.style.backgroundImage = `url("${urlImage}")`;
+  });
+
+  for (let i = 1; i <= 6; i++) {
+    const title = document.querySelector(`.card-${i} .card_content .card_title`);
+    const description = document.querySelector(`.card-${i} .card_content .card_description`);
+  
+    title.innerHTML = data.highlights[i-1].title;
+    description.innerHTML = data.highlights[i-1].description;
+  }
 });

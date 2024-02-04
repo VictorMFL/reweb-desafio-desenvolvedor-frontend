@@ -81,3 +81,52 @@
       background-color: gray;
       color: #fff;
       font-size: 12px; }
+
+.cards_container {
+  width: 100%;
+  padding: 30px; }
+
+.grid_cards {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  gap: 10px; }
+  .grid_cards .card {
+    position: relative;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 300px !important;
+    height: 300px !important;
+    background-color: transparent;
+    padding: 10px;
+    background-size: cover;
+    background-position: center center; }
+  .grid_cards .card_content {
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background-color: transparent;
+    color: #fff; }
+    .grid_cards .card_content .card_title {
+      font-size: 1.5rem;
+      background-color: transparent; }
+    .grid_cards .card_content .card_description {
+      height: 100px;
+      font-size: 14px;
+      background-color: transparent; }
+
+.youtube {
+  width: 100%;
+  padding: 30px;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important; }
+  .youtube #video {
+    width: 60% !important;
+    height: 400px; }
