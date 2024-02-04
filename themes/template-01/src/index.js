@@ -9,8 +9,6 @@ async function get() {
     }
     data = await response.json();
     document.title = data.texts.title;
-
-    console.log(data);
   } catch (error) {
     console.log("Ocorreu um erro ao pegar os dados do arquivo json.");
   }
