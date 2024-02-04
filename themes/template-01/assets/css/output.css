@@ -130,3 +130,24 @@
   .youtube #video {
     width: 60% !important;
     height: 400px; }
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #2262CC; }
+  .footer .size {
+    width: 100px;
+    height: 50px;
+    background-color: #b1b1b1;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .footer p {
+    font-weight: 400;
+    background-color: #b1b1b1; }
+  .footer .development {
+    color: #fff;
+    background-color: transparent; }
